@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#151515">
+<meta name="description" content="MK FOODS — pizza, burgers, shawarma, chicken wings and more. Find us at Main Bazar, Bakhshali, Mardan.">
+<title>MK FOODS — Big Flavour, Good Food</title>
+<style>
+:root{--ink:#151515;--red:#e63935;--cream:#fff4e8;--paper:#fffaf4;--muted:#756f69;--line:#eadfd4;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(21,21,21,.96);color:white;border-bottom:1px solid #38302d;backdrop-filter:blur(14px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-weight:1000;font-size:25px;letter-spacing:-1.6px}.brand span{color:var(--red)}
+.navlinks{display:flex;gap:28px;color:#e7e0da;font-size:14px;font-weight:700}.navlinks a:hover{color:#ff7770}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:14px 21px;background:var(--red);color:#fff;font-weight:800;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:#c92f2b}.btn-light{background:var(--cream);color:var(--ink)}.btn-light:hover{background:white}
+.menu-toggle{display:none;background:none;border:1px solid #555;color:white;border-radius:12px;padding:9px 12px;font-size:20px}
+.hero{position:relative;overflow:hidden;background:var(--ink);color:white;padding:84px 0 90px}
+.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-140px;top:-150px;background:radial-gradient(circle,rgba(230,57,53,.38),transparent 68%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px}
+.kicker{color:#ff7770;font-size:12px;letter-spacing:3px;font-weight:900;text-transform:uppercase}
+.hero h1{font-size:clamp(48px,7.2vw,88px);line-height:.98;letter-spacing:-5px;margin:20px 0 22px;max-width:680px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-copy{max-width:520px;color:#c9c1ba;font-size:17px;margin:0 0 30px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}.outline{display:inline-flex;align-items:center;border:1px solid #77716c;color:white;border-radius:999px;padding:13px 20px;font-weight:800}
+.hero-visual{min-height:410px;display:grid;place-items:center;position:relative}
+.plate{width:min(390px,82vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#f8c879 0 35%,#d98b39 36% 42%,#f5e2c2 43% 47%,#3c2921 48% 51%,#171717 52%);box-shadow:0 35px 90px #0008;transform:rotate(-9deg);animation:levitate 5s ease-in-out infinite}
+.plate-inner{font-size:clamp(125px,19vw,205px);filter:drop-shadow(0 15px 9px #43210b66);transform:rotate(9deg)}
+.sticker{position:absolute;right:1%;bottom:25px;background:var(--cream);color:var(--ink);padding:14px 19px;border-radius:14px;font-weight:1000;transform:rotate(5deg);box-shadow:0 12px 30px #0005}
+.spark{position:absolute;color:#ffb5a8;font-size:35px}.spark.one{top:35px;left:8%}.spark.two{right:9%;top:55px;font-size:24px}
+@keyframes levitate{0%,100%{transform:translateY(0) rotate(-9deg)}50%{transform:translateY(-13px) rotate(-5deg)}}
+.ticker{background:var(--red);color:white;overflow:hidden;white-space:nowrap;padding:13px 0;font-weight:900;letter-spacing:2px;font-size:12px}
+.ticker span{display:inline-block;padding:0 22px}
+section{padding:86px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 42px}
+.eyebrow{color:var(--red);font-size:12px;font-weight:900;letter-spacing:2.8px;text-transform:uppercase}
+h2{font-size:clamp(34px,5vw,54px);line-height:1.05;letter-spacing:-2.5px;margin:12px 0}
+.section-head p{color:var(--muted);margin:13px 0 0}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.food-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.food-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px #3d211015}
+.food-art{height:175px;display:grid;place-items:center;background:linear-gradient(135deg,#f8dfc8,#f5c9b0);font-size:83px;position:relative}
+.food-art:after{content:"";position:absolute;width:110px;height:110px;border:1px solid #ffffff9c;border-radius:50%}
+.food-info{padding:21px}.food-info h3{font-size:21px;margin:0 0 5px}.food-info p{font-size:14px;color:var(--muted);margin:0;min-height:43px}
+.price{margin-top:15px;color:var(--red);font-size:13px;font-weight:900;letter-spacing:.4px}
+.offer{background:var(--red);color:white;position:relative;overflow:hidden}
+.offer:after{content:"✦";position:absolute;right:8%;top:-80px;font-size:350px;color:#ffffff12;line-height:1}
+.offer-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:35px}
+.offer h2{max-width:650px;font-size:clamp(38px,6vw,66px);margin:10px 0}
+.offer p{max-width:570px;color:#ffe0d9;margin:0}
+.offer .eyebrow{color:#ffe1d8}
+.about-grid,.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.about-panel{background:var(--ink);color:white;border-radius:var(--radius);padding:36px;position:relative;overflow:hidden;min-height:300px}
+.about-panel:after{content:"MK";position:absolute;right:-8px;bottom:-65px;font-size:190px;font-weight:1000;color:#ffffff0b;letter-spacing:-18px}
+.about-panel h3{font-size:30px;line-height:1.1;max-width:370px;margin:12px 0}
+.about-panel p{color:#c9c1ba;max-width:420px}
+.value-list{display:grid;gap:12px}
+.value{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;gap:15px;align-items:center}
+.value b{display:block}.value small{color:var(--muted)}
+.value-icon{width:45px;height:45px;display:grid;place-items:center;border-radius:14px;background:#f9dfd4;font-size:22px;flex:none}
+.visit-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.visit-card h3{font-size:23px;margin:0 0 9px}.visit-card p{color:var(--muted);margin:0}
+.map-placeholder{margin-top:20px;min-height:130px;border-radius:16px;background:repeating-linear-gradient(35deg,#f3e4d7 0 15px,#f8eee5 15px 30px);display:grid;place-items:center;text-align:center;color:#7b6254;font-weight:800}
+.map-placeholder span{display:block;font-size:30px}
+.contact{background:var(--ink);color:white;text-align:center}
+.contact p{color:#c9c1ba;max-width:570px;margin:0 auto 25px}
+.contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+footer{background:#101010;color:white;padding:30px 0}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer p{margin:0;color:#aaa;font-size:13px}
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--red);color:white;border:2px solid white;display:grid;place-items:center;font-size:24px;box-shadow:0 10px 28px #0004;cursor:pointer}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+.notice{font-size:12px;color:#a9a19a;margin-top:14px}
+@media(max-width:800px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#151515;padding:20px;flex-direction:column;gap:18px;border-bottom:1px solid #444}.navlinks.open{display:flex}.menu-toggle{display:block}.nav .btn{margin-left:auto;padding:11px 15px;font-size:13px}.hero{padding:65px 0 60px}.hero-grid{grid-template-columns:1fr;text-align:center;gap:12px}.hero h1{letter-spacing:-3px}.hero-copy{margin:0 auto 25px}.actions{justify-content:center}.hero-visual{min-height:300px}.plate{width:270px}.plate-inner{font-size:145px}.sticker{right:7%;bottom:8px}.menu-grid{grid-template-columns:repeat(2,1fr)}.offer-inner{display:block;text-align:center}.offer p{margin:0 auto 25px}.offer .btn{margin-top:25px}.about-grid,.visit-grid{grid-template-columns:1fr}section{padding:68px 0}}
+@media(max-width:480px){.wrap{width:min(100% - 30px,1160px)}.brand{font-size:22px}.nav{height:68px}.navlinks{top:68px}.nav .btn{font-size:12px;padding:10px 12px}.hero h1{font-size:52px}.hero-copy{font-size:15px}.hero-visual{min-height:260px}.plate{width:230px}.plate-inner{font-size:125px}.menu-grid{gap:11px}.food-art{height:125px;font-size:62px}.food-info{padding:15px}.food-info h3{font-size:17px}.food-info p{font-size:12px;min-height:55px}.price{font-size:11px}.about-panel,.visit-card{padding:25px}.whatsapp{width:52px;height:52px;right:14px;bottom:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="MK Foods home">MK <span>FOODS.</span></a>
+    <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#location">Location</a>
+    </nav>
+    <a class="btn" href="#contact">Get in touch <span>↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="kicker">Good food. Great mood.</div>
+      <h1>BIG BITES.<br><em>BOLD</em> FLAVOUR.</h1>
+      <p class="hero-copy">From cheesy pizza and juicy burgers to shawarma, wings and refreshing drinks — bring your appetite to MK FOODS.</p>
+      <div class="actions"><a class="btn" href="#menu">Explore the menu <span>↓</span></a><a class="outline" href="#location">Find our spot</a></div>
+    </div>
+    <div class="hero-visual reveal" aria-label="Illustration of a burger">
+      <span class="spark one">✦</span><span class="spark two">✳</span>
+      <div class="plate"><div class="plate-inner">🍔</div></div>
+      <div class="sticker">MADE FOR<br>BIG APPETITES</div>
+    </div>
+  </div>
+</section>
+<div class="ticker" aria-hidden="true"><span>✦ PIZZA</span><span>✦ BURGERS</span><span>✦ SHAWARMA</span><span>✦ CHICKEN WINGS</span><span>✦ FRIES & DRINKS</span><span>✦ GOOD FOOD</span></div>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">What sounds good?</div><h2>THE MENU LINE-UP</h2><p>Pick your craving. Menu details and prices will be added when confirmed.</p></div>
+    <div class="menu-grid">
+      <article class="food-card reveal"><div class="food-art">🍕</div><div class="food-info"><h3>Pizza</h3><p>Cheesy, satisfying slices for every pizza mood.</p><div class="price">MENU & PRICES COMING SOON</div></div></article>
+      <article class="food-card reveal"><div class="food-art">🍔</div><div class="food-info"><h3>Burgers</h3><p>A delicious handheld favourite, stacked with flavour.</p><div class="price">MENU & PRICES COMING SOON</div></div></article>
+      <article class="food-card reveal"><div class="food-art">🌯</div><div class="food-info"><h3>Shawarma</h3><p>Wrapped up and ready for a seriously tasty bite.</p><div class="price">MENU & PRICES COMING SOON</div></div></article>
+      <article class="food-card reveal"><div class="food-art">🍗</div><div class="food-info"><h3>Chicken Wings</h3><p>Chicken wings for sharing — or keeping all to yourself.</p><div class="price">MENU & PRICES COMING SOON</div></div></article>
+      <article class="food-card reveal"><div class="food-art">🍟</div><div class="food-info"><h3>Fries & Snacks</h3><p>The sidekicks every good meal deserves.</p><div class="price">MENU & PRICES COMING SOON</div></div></article>
+      <article class="food-card reveal"><div class="food-art">🥤</div><div class="food-info"><h3>Cold Drinks</h3><p>Something chilled to complete your food break.</p><div class="price">MENU & PRICES COMING SOON</div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="wrap offer-inner reveal">
+    <div><div class="eyebrow">A little something to look forward to</div><h2>YOUR NEXT<br>FAVOURITE BITE.</h2><p>Special offers and combo details will appear here once they are confirmed. Check back for updates.</p></div>
+    <a class="btn btn-light" href="#contact">Ask us about the menu <span>↗</span></a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-panel reveal"><div class="eyebrow">Meet MK FOODS</div><h3>Good food brings people together.</h3><p>MK FOODS is your local stop for fast-food favourites in Bakhshali. Whether you're in the mood for a burger, pizza, shawarma or a cold drink, there's something tasty to look forward to.</p></div>
+    <div class="value-list">
+      <div class="value reveal"><div class="value-icon">🍽️</div><div><b>Something for every craving</b><small>Explore a range of fast-food favourites.</small></div></div>
+      <div class="value reveal"><div class="value-icon">📍</div><div><b>Right here in Bakhshali</b><small>Find us at Main Bazar, Bakhshali.</small></div></div>
+      <div class="value reveal"><div class="value-icon">🥤</div><div><b>Make it a full meal</b><small>Food, snacks and drinks in one place.</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap">
+    <div class="section-head reveal"><div class="eyebrow">Come find us</div><h2>YOUR LOCAL FOOD STOP.</h2><p>Save the location and drop by when you're nearby.</p></div>
+    <div class="visit-grid">
+      <div class="visit-card reveal"><h3>📍 Main Bazar, Bakhshali</h3><p>Bakhshali, Mardan, Khyber Pakhtunkhwa, Pakistan.</p><div class="map-placeholder"><div><span>📌</span>MK FOODS · MAIN BAZAR BAKHSHALI</div></div></div>
+      <div class="visit-card reveal"><h3>🕒 Opening hours</h3><p>Opening and closing times have not been confirmed yet.</p><div class="map-placeholder"><div><span>⏰</span>HOURS COMING SOON</div></div><p class="notice">Please check back for confirmed business hours and contact details.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">Say hello</div><h2>HUNGRY? LET'S TALK.</h2>
+    <p>Have a question about MK FOODS? Contact details will be added here when the business number is ready.</p>
+    <button class="btn" id="contactBtn" type="button">Contact details coming soon</button>
+    <div class="notice">Demo website · Phone and WhatsApp ordering are not connected yet.</div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap footer-row"><a class="brand" href="#home">MK <span>FOODS.</span></a><p>Main Bazar, Bakhshali · Mardan, Pakistan</p><p>© <span id="year"></span> MK FOODS. All rights reserved.</p></div></footer>
+<button class="whatsapp" id="floatingContact" type="button" aria-label="Contact MK Foods">✉</button>
+
+<script>
+const whatsappNumber = ""; // Add the confirmed number in international format, e.g. 923001234567
+const message = encodeURIComponent("Hello MK FOODS! I'd like to know more about your menu.");
+
+function contactMKFoods(){
+  if(!whatsappNumber){
+    alert("MK FOODS contact number has not been added yet. This is a demo button.");
+    return;
+  }
+  window.open(`https://wa.me/${whatsappNumber}?text=${message}`,"_blank","noopener,noreferrer");
+}
+document.getElementById("contactBtn").addEventListener("click",contactMKFoods);
+document.getElementById("floatingContact").addEventListener("click",contactMKFoods);
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const toggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navlinks");
+toggle.addEventListener("click",()=>{
+  const isOpen = nav.classList.toggle("open");
+  toggle.setAttribute("aria-expanded",String(isOpen));
+  toggle.setAttribute("aria-label",isOpen ? "Close navigation" : "Open navigation");
+  toggle.textContent = isOpen ? "×" : "☰";
+});
+nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{
+  nav.classList.remove("open");
+  toggle.setAttribute("aria-expanded","false");
+  toggle.textContent="☰";
+}));
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
